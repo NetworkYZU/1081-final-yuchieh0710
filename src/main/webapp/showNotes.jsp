@@ -19,10 +19,7 @@
     </head>
     <body>
         <a href="logout.jsp">登出</a><br/>
-      <%
-          UserData user=(UserData)session.getAttribute("user");
-          List<Note> notes=user.getNotes();
-      %>
+      
       <!--
       將目前 session 中記錄的 user 的 notes 顯示在下列表格中
       (20%)
@@ -36,18 +33,7 @@
               </tr>
           </thead>
           <tbody>
-              <%
-                  for(int i=0; i<notes.size(); i++){
-                      Note note=notes.get(i);
-              %>
-              <tr>
-                  <td><%=note.getHeader().getDate()%></td>
-                  <td><%=note.getHeader().getTitle()%></td>
-                  <td><%=note.getContent()%></td>
-              </tr>
-              <%
-                  }
-              %>
+              
           </tbody>
       </table>
     </body>
