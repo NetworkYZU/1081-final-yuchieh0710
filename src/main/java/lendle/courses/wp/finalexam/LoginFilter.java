@@ -69,9 +69,15 @@ public class LoginFilter implements Filter {
         Throwable problem = null;
         try {
             HttpServletRequest httpRequest=(HttpServletRequest) request;
+            HttpServletResponse httpServletResponse=(HttpServletResponse) response;
             HttpSession session=httpRequest.getSession();
             //完成 filter 的部分，當 session 中沒有 user 參數時，轉址到 /login.jsp
             //否則正常執行 (30%)
+            if (session.getAttribute("user") != null){
+                chain.doFilter(request,response);
+            }else{
+                httpServletResponse.sendRedirect("login.jsp");
+            }
             
             
             ///////////////////////////////////////////////////////////////

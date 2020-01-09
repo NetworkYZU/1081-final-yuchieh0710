@@ -42,6 +42,12 @@ public class UserData {
     public void setPassword(String password) {
         this.password = password;
     }
-    
-    
+
+    void setAttribute(String user, UserData user0) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    void setAttribute(String password, String password0) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
